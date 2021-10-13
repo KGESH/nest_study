@@ -2,14 +2,23 @@ import { TypeOrmModuleOptions } from '@nestjs/typeorm';
 import * as config from 'config';
 
 const dbConfig: any = config.get('db');
+const envLog: any = [
+  process.env.DOCKER_TYPE,
+  process.env.DOCKER_HOST,
+  process.env.DOCKER_PORT,
+  process.env.DOCKER_USERNAME,
+  process.env.DOCKER_PASSWORD,
+  process.env.DOCKER_DATABASE,
+];
+console.log(envLog);
 console.log(dbConfig);
 export const typeORMConfig: TypeOrmModuleOptions = {
-  type: dbConfig.type,
-  host: process.env.RDS_HOSTNAME || dbConfig.host,
-  port: process.env.RDS_PORT || dbConfig.port,
-  username: process.env.RDS_USERNAME || dbConfig.username,
-  password: process.env.RDS_PASSWORD || dbConfig.password,
-  database: process.env.RDS_DATABASE || dbConfig.database,
+  type: process.env.DOCKER_TYPE || dbConfig.type,
+  host: process.env.DOCKER_HOST || dbConfig.host,
+  port: process.env.DOCKER_PORT || dbConfig.port,
+  username: process.env.DOCKER_USERNAME || dbConfig.username,
+  password: process.env.DOCKER_PASSWORD || dbConfig.password,
+  database: process.env.DOCKER_DATABASE || dbConfig.database,
   entities: [__dirname + '/../**/*.entity.{js, ts}'],
-  synchronize: process.env.RDS_SYNCHRONIZE || dbConfig.synchronize,
+  synchronize: process.env.DOCKER_SYNCHRONIZE || dbConfig.synchronize,
 };
