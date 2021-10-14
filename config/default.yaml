@@ -5,7 +5,7 @@ db:
   type: 'postgres'
   port: 5432
   database: 'board-app'
-  host: 'localhost'
+  host: '34.122.104.199'
   username: 'postgres'
   password: '789456'
   synchronize: true
