@@ -1,3 +1,4 @@
+FROM ubuntu:18.04
 FROM node:14
 
 WORKDIR /app
@@ -10,5 +11,7 @@ COPY . .
 
 EXPOSE 3000
 
-CMD [ "npm", "start" ]
+RUN npm run --script build
+
+CMD node dist/main.js
 
