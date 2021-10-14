@@ -14,3 +14,4 @@
 - PostgreSQL
 - TypeORM
 - Docker
+- Jenkins
