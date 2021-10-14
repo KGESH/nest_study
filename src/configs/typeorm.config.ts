@@ -1,3 +1,4 @@
+import { Logger } from '@nestjs/common';
 import { TypeOrmModuleOptions } from '@nestjs/typeorm';
 import * as config from 'config';
 
@@ -10,8 +11,8 @@ const envLog: any = [
   process.env.DOCKER_PASSWORD,
   process.env.DOCKER_DATABASE,
 ];
-console.log(envLog);
-console.log(dbConfig);
+Logger.log(envLog);
+Logger.log(dbConfig);
 export const typeORMConfig: TypeOrmModuleOptions = {
   type: process.env.DOCKER_TYPE || dbConfig.type,
   host: process.env.DOCKER_HOST || dbConfig.host,
