@@ -11,6 +11,6 @@ Logger.log(`App starting config port ${serverConfig.port}`);
 async function bootstrap() {
   const app = await NestFactory.create(AppModule);
   await app.listen(port);
-  Logger.log(`App running port ${port}`);
+  Logger.log(`App running port: ${port}`);
 }
 bootstrap();
