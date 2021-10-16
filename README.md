@@ -7,7 +7,7 @@
 - DevOps 공부하며 점점 살을 붙여나가는 프로젝트
   - Dockerize 하여 GCP에 배포.
   - 현재 Jenkins 컨테이너와 깃헙 연동 완료
-  - Jenkins 컨테이너에서 도커 이미지 빌드 예정
+  - Jenkins 컨테이너에서 도커 이미지 빌드
 
 ## Stack
 
